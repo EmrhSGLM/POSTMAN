@@ -1,0 +1,40 @@
+API 2.DERS
+
+	Postman =>API da manuel test yapmak icin kullanılır
+
+	Postman'de import butonuna basarak oradan gitHub a gonderebiliriz
+
+	=> SWAGGER DOKUMANI kullanım klavuzu olarak degerlendirebiliriz
+	   Doktkor bize ilac verdigi zaman nasıl kullanacagımız soylemesi gibi
+
+	=> Swagger dokumanı olusturmayıp siz sunlara gore su testleri yapın 
+		derler
+
+	=> https://reqres.in/api/users?page=2 : Uri or End Point
+		
+		https://reqres.in/ -> Base Url
+		api/users -> path param
+		page=2  -> query param (key value seklindedir)
+
+	=> Sirketlerde API testi yapmak icin autharization yani yetki verilmesi 
+		gerekir	
+
+	**** GET https://reqres.in/api/users?page=4&per_page=3
+		4.sayfadaki ilk 3 kisinin verisini getirir
+
+	=> End Point yapısını Developer lar olusturur
+	
+
+	***** GET https://reqres.in/api/users/2
+	   id si 2 olan kullanıcının verilerini getirir	
+
+	****** GET https://reqres.in/api/users?delay=3 
+	   delay data nın gelme suresini geciktirir
+	   delay=3 (3 sn bekletir daha sonra bu kodu getirir)
+
+	   		delay kullanırken ki mantık : bir guncelleme yapıldıgında veri 
+	   sorgusu yapıldıgında guncelleme bitmedigi icin delay kullanılır genel
+	   olarak Developer lar kullanır
+
+	   		delay her hangi bir sorgunun en sonuna eklenebilir
+

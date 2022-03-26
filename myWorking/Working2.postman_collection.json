@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "41989a4d-b540-4c93-8678-acffa5c73d5c",
+		"name": "Working2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Regresin",
+			"item": [
+				{
+					"name": "firstTesting",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users?page=1",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "singleUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users/2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sibgleUserNotFound",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users/23",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://reqres.in/api/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VariableKullanmak",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url1}}/6",
+							"host": [
+								"{{url1}}"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://reqres.in/api/users/2",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users/2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HerOkuApp",
+			"item": [
+				{
+					"name": "https://restful-booker.herokuapp.com/booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking?firstname=sally&lastname=brown",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "sally"
+								},
+								{
+									"key": "lastname",
+									"value": "brown"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/booking/146",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Emrah\",\r\n    \"lastname\": \"Saglam\",\r\n    \"totalprice\": 71,\r\n    \"depositpaid\": true,\r\n    \"bookingdates\": {\r\n        \"checkin\": \"2022-06-10\",\r\n        \"checkout\": \"2020-07-1\"\r\n    },\r\n    \"additionalneeds\": \"Breakfast, Lunch\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking/146",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking",
+								"146"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/booking/233",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Osman\",\r\n    \"lastname\": \"Meral\",\r\n    \"totalprice\": 68,\r\n    \"depositpaid\": true,\r\n    \"bookingdates\": {\r\n        \"checkin\": \"1923-10-06\",\r\n        \"checkout\": \"2015-02-28\"\r\n    },\r\n    \"additionalneeds\": \"Matematik\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking/233",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking",
+								"233"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VariableKullanarak",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url2}}/5",
+							"host": [
+								"{{url2}}"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dummy",
+			"item": [
+				{
+					"name": "http://dummy.restapiexample.com/api/v1/employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://dummy.restapiexample.com/api/v1/employee/24",
+							"protocol": "http",
+							"host": [
+								"dummy",
+								"restapiexample",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"employee",
+								"24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://dummy.restapiexample.com/api/v1/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test\",\"salary\":\"123\",\"age\":\"23\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://dummy.restapiexample.com/api/v1/create",
+							"protocol": "http",
+							"host": [
+								"dummy",
+								"restapiexample",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GMIBank",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdXJhdHRhbmMiLCJhdXRoIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY0NjI0NzQyN30.gM95vAWCDXArV-bdKlUPlRiJJhSnUIFecRAJpnKWG9Aj2dbzN4Xc2dDxKp-yQeBDpes8rF_V26ux9ih-AUa5Nw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.gmibank.com/api/tp-account-registrations/154734",
+							"protocol": "https",
+							"host": [
+								"www",
+								"gmibank",
+								"com"
+							],
+							"path": [
+								"api",
+								"tp-account-registrations",
+								"154734"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://www.gmibank.com/api/tp-account-registrations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdXJhdHRhbmMiLCJhdXRoIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY0NjI0NzQyN30.gM95vAWCDXArV-bdKlUPlRiJJhSnUIFecRAJpnKWG9Aj2dbzN4Xc2dDxKp-yQeBDpes8rF_V26ux9ih-AUa5Nw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n        \"ssn\": \"124-45-3422\",\r\n        \"firstName\": \"Emrh\",\r\n        \"lastName\": \"SGLM\",\r\n        \"address\": \"Afrika\",\r\n        \"mobilePhoneNumber\": \"345-123-3423\",\r\n        \"userId\": 1202,\r\n        \"userName\": \"emrh.sglm\",\r\n        \"email\": \"emrh.sglm@dsadsad.com\",\r\n        \"createDate\": \"2020-10-07T22:47:54.927Z\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.gmibank.com/api/tp-account-registrations",
+							"protocol": "https",
+							"host": [
+								"www",
+								"gmibank",
+								"com"
+							],
+							"path": [
+								"api",
+								"tp-account-registrations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url3}}/154734",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdXJhdHRhbmMiLCJhdXRoIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY0NjI0NzQyN30.gM95vAWCDXArV-bdKlUPlRiJJhSnUIFecRAJpnKWG9Aj2dbzN4Xc2dDxKp-yQeBDpes8rF_V26ux9ih-AUa5Nw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url3}}/154734",
+							"host": [
+								"{{url3}}"
+							],
+							"path": [
+								"154734"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
